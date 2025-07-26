@@ -265,7 +265,13 @@ Here's the POM format with the added items for enabling code coverage with JaCoC
 ```
 
 Make sure to include this code snippet within the `<project>` tags of your existing POM file, and adjust any other project-specific configurations as needed.
+- 1. No seu terminal do Ubuntu, execute este comando:
 
+Este comando tornará o usuário jenkins o "dono" de toda a pasta do Tomcat e de tudo que há dentro dela.
+
+Bash
+
+- sudo chown -R jenkins:jenkins /opt/apache-tomcat-9.0.65
 ### Jenkins pipeline to run SOnar analysis
 
 ```powershell
