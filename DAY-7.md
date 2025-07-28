@@ -80,6 +80,58 @@ docker run -d --name nexus -p 8081:8081 sonatype/nexus3
 ```
 In your POM file, you can include the following information :
 
+# Guia Rápido: Acessando o Sonatype Nexus via Docker
+
+Este guia mostra como iniciar um contêiner do Sonatype Nexus, encontrar a senha inicial do administrador e realizar o primeiro login.
+
+## Passo 1: Iniciar o Contêiner do Nexus
+
+Primeiro, vamos garantir que o contêiner do Nexus esteja rodando. O comando abaixo mapeia a porta `8081` do seu computador para a porta `8081` do contêiner e cria um volume para persistir os dados.
+
+Execute este comando no seu terminal:
+
+```bash
+docker run -d -p 8081:8081 --name nexus-repo sonatype/nexus3
+```
+
+-   `-d`: Roda o contêiner em modo "detached" (em segundo plano).
+-   `-p 8081:8081`: Mapeia a porta 8081 da sua máquina para a porta 8081 do contêiner.
+-   `--name nexus-repo`: Dá um nome fácil de lembrar ao seu contêiner.
+
+## Passo 2: Encontrar o ID ou Nome do Contêiner
+
+Para interagir com o contêiner, precisamos do seu nome ou ID. Liste os contêineres ativos:
+
+```bash
+docker ps
+```
+
+A saída mostrará algo como:
+
+```
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                    NAMES
+a1b2c3d4e5f6   sonatype/nexus3     "sh -c ${JAVA_HOME}/b…"   5 minutes ago    Up 5 minutes    0.0.0.0:8081->8081/tcp   nexus-repo
+```
+
+Anote o **NOME** (`nexus-repo` neste exemplo) ou o **CONTAINER ID** (`a1b2c3d4e5f6`).
+
+## Passo 3: Obter a Senha de Administrador
+
+A senha inicial do usuário `admin` é gerada e armazenada em um arquivo dentro do contêiner. Para visualizá-la, execute o comando `cat` dentro do contêiner.
+
+Substitua `nexus-repo` pelo nome ou ID do seu contêiner, se for diferente:
+
+```bash
+docker exec nexus-repo cat /nexus-data/admin.password
+```
+
+O terminal exibirá uma sequência de caracteres. **Essa é a sua senha temporária.**
+
+## Passo 4: Fazer Login no Nexus
+
+1.  Abra seu navegador e acesse: `http://localhost:8081`
+2.  Clique em **"Sign
+
 ```xml
 <distributionManagement>
   <repository>
