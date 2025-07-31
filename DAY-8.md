@@ -106,7 +106,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/jaiswaladi246/Shopping-Cart.git'
+                git branch: 'main', url: 'https://github.com/silviojpa/shopping-car.git'
             }
         }
         
@@ -120,11 +120,11 @@ pipeline {
             steps {
                 sh '''
                     $SCANNER_HOME/bin/sonar-scanner \
-                    -Dsonar.url=http://13.233.102.184:9000/ \
-                    -Dsonar.login=squ_815b4e28b618be7ab62693da256718391e4046d3 \
-                    -Dsonar.projectName=Shopping-Cart \
+                    -Dsonar.url=http://localhost:9000/ \
+                    -Dsonar.login=squ_aa2b36e6f567f703ad1cd00fd7bb64c6a55dc160 \
+                    -Dsonar.projectName=shopping-car \
                     -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=Shopping-Cart
+                    -Dsonar.projectKey=shopping-car
                 '''
             }
         }
@@ -137,7 +137,7 @@ pipeline {
         
         stage('OWASP Dependency Check') {
             steps {
-                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'owasp'
+                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'DP'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
@@ -145,9 +145,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'c9b058e5-bfe6-41f8-9b5d-dc0b0d2955ac', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'f45e0e3c-4b75-4952-9ab0-c00ff2c9b820', toolName: 'docker') {
                         sh "docker build -t shopping-cart -f docker/Dockerfile ."
-                        sh "docker tag shopping-cart adijaiswal/shopping-cart:latest"
+                        sh "docker tag shopping-cart silvio69luiz/shopping-cart:latest"
                     }
                 }
             }
@@ -156,8 +156,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'c9b058e5-bfe6-41f8-9b5d-dc0b0d2955ac', toolName: 'docker') {
-                        sh "docker push adijaiswal/shopping-cart:latest"
+                    withDockerRegistry(credentialsId: 'f45e0e3c-4b75-4952-9ab0-c00ff2c9b820', toolName: 'docker') {
+                        sh "docker push silvio69luiz/shopping-cart:latest"
                     }
                 }
             }
@@ -166,8 +166,8 @@ pipeline {
         stage('Deploy To Docker Container') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'c9b058e5-bfe6-41f8-9b5d-dc0b0d2955ac', toolName: 'docker') {
-                        sh "docker run -d --name shopping -p 8070:8070 adijaiswal/shopping-cart:latest"
+                    withDockerRegistry(credentialsId: 'f45e0e3c-4b75-4952-9ab0-c00ff2c9b820', toolName: 'docker') {
+                        sh "docker run -d --name shopping -p 8070:8070 silvio69luiz/shopping-cart:latest"
                     }
                 }
             }
