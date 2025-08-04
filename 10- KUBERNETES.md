@@ -238,9 +238,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 These are just a few examples of the most commonly used kubectl commands. There are many more commands available, and you can explore additional options and parameters in the Kubernetes documentation or by using `kubectl --help`.
 
-Claro\! Aqui está o código completo pronto para você copiar e colar em um arquivo `.md`.
-
-Basta copiar todo o conteúdo dentro do bloco abaixo e salvar em um arquivo como `GUIA_MINIKUBE.md` no seu repositório.
+## Intalação do Minikube no Ubuntu
 
 ````markdown
 # Guia de Instalação: Minikube com Docker no Ubuntu
