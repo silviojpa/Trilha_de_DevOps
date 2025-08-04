@@ -238,3 +238,169 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 These are just a few examples of the most commonly used kubectl commands. There are many more commands available, and you can explore additional options and parameters in the Kubernetes documentation or by using `kubectl --help`.
 
+Claro\! Aqui está o código completo pronto para você copiar e colar em um arquivo `.md`.
+
+Basta copiar todo o conteúdo dentro do bloco abaixo e salvar em um arquivo como `GUIA_MINIKUBE.md` no seu repositório.
+
+````markdown
+# Guia de Instalação: Minikube com Docker no Ubuntu
+
+Este guia fornece um passo a passo completo para configurar um ambiente de desenvolvimento Kubernetes local usando Minikube com o driver Docker no Ubuntu ou em sistemas baseados em Debian.
+
+## Pré-requisitos
+
+Antes de começar, garanta que seu sistema atende aos seguintes requisitos:
+
+* **Sistema Operacional:** Ubuntu 22.04 LTS ou similar.
+* **Recursos do Sistema:**
+    * Mínimo de 2 CPUs ou mais.
+    * Mínimo de 4GB de memória RAM.
+    * Mínimo de 20GB de espaço livre em disco.
+* **Docker:** O Docker deve estar instalado e funcionando. Para verificar, execute `docker --version`.
+* **Conexão com a Internet:** Necessária para baixar as ferramentas e as imagens de contêiner.
+* **Ferramentas de Linha de Comando:** `curl` ou `wget` para downloads.
+
+---
+``````
+## Passo 1: Instalação do `kubectl`
+
+O `kubectl` é a ferramenta de linha de comando oficial para interagir com o cluster Kubernetes.
+
+**1. Baixe o binário do `kubectl`:**
+
+```bash
+curl -LO "[https://dl.k8s.io/release/$(curl](https://dl.k8s.io/release/$(curl) -L -s [https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl](https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl)"
+```
+```
+`````
+
+**2. Torne o binário executável:**
+
+```bash
+chmod +x ./kubectl
+```
+
+**3. Mova o binário para o seu PATH global:**
+
+```bash
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
+**4. Verifique a instalação:**
+
+```bash
+kubectl version --client
+```
+
+-----
+
+## Passo 2: Instalação do Minikube
+
+Minikube é a ferramenta que vai criar e gerenciar nosso cluster Kubernetes local.
+
+**1. Baixe o pacote de instalação `.deb` mais recente:**
+
+```bash
+curl -LO [https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb](https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb)
+```
+
+**2. Instale o pacote usando `dpkg`:**
+
+```bash
+sudo dpkg -i minikube_latest_amd64.deb
+```
+
+**3. Verifique a instalação:**
+
+```bash
+minikube version
+```
+
+-----
+
+## Passo 3: Iniciando o Cluster Minikube
+
+Agora vamos iniciar o cluster, especificando o Docker como o ambiente de execução dos contêineres (driver).
+
+**1. Execute o comando de inicialização:**
+
+```bash
+minikube start --driver=docker
+```
+
+> **Nota de Permissão:** Se você receber um erro relacionado a permissões do Docker, adicione seu usuário ao grupo `docker` e **reinicie sua sessão de terminal (feche e abra novamente) ou reinicie o computador**.
+>
+> ```bash
+> sudo usermod -aG docker $USER && newgrp docker
+> ```
+
+**2. Verifique o status do cluster:**
+
+Após alguns minutos, o cluster estará pronto. Verifique com o comando:
+
+```bash
+minikube status
+```
+
+A saída deve mostrar `host`, `kubelet` e `apiserver` com o status `Running`.
+
+-----
+
+## Passo 4: Deploy da Sua Imagem do Docker Hub
+
+Com o cluster no ar, vamos fazer o deploy da sua imagem customizada.
+
+**1. Crie um Deployment:**
+
+Use o comando `kubectl create deployment`. Substitua `**nome-do-seu-deployment**` por um nome de sua escolha (ex: `meu-app-web`) e `**seu-usuario/sua-imagem:tag**` pela sua imagem no Docker Hub.
+
+```bash
+# Exemplo: kubectl create deployment meu-app-web --image=meuusuario/meu-app:1.0
+kubectl create deployment **nome-do-seu-deployment** --image=**seu-usuario/sua-imagem:tag**
+```
+
+O Kubernetes irá baixar sua imagem do Docker Hub e criar um Pod para executá-la.
+
+**2. Exponha o Deployment como um Serviço:**
+
+Para acessar sua aplicação, crie um serviço do tipo `NodePort`. Isso torna a aplicação acessível através de uma porta no nó do Minikube. Substitua `**nome-do-seu-deployment**` pelo mesmo nome usado acima e `**porta-do-container**` pela porta que sua aplicação expõe (ex: 3000, 5000, 8080).
+
+```bash
+# Exemplo: kubectl expose deployment meu-app-web --type=NodePort --port=8080
+kubectl expose deployment **nome-do-seu-deployment** --type=NodePort --port=**porta-do-container**
+```
+
+**3. Acesse sua Aplicação:**
+
+O Minikube facilita o acesso ao serviço. Execute o comando abaixo, que abrirá a URL correta diretamente no seu navegador:
+
+```bash
+minikube service **nome-do-seu-deployment**
+```
+
+Pronto\! Sua aplicação que estava no Docker Hub agora está rodando em um cluster Kubernetes na sua máquina local.
+
+-----
+
+## Comandos Úteis do Dia a Dia
+
+```bash
+# Ver todos os recursos criados (pods, services, deployments)
+kubectl get all
+
+# Acessar o Dashboard do Kubernetes no navegador
+minikube dashboard
+
+# Ver os logs de um pod (primeiro use 'kubectl get pods' para pegar o nome do pod)
+kubectl logs <nome-do-pod>
+
+# Parar o cluster (libera recursos de CPU e RAM)
+minikube stop
+
+# Deletar o cluster completamente (remove todos os dados)
+minikube delete
+```
+
+```
+```
+
