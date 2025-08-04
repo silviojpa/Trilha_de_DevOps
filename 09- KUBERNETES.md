@@ -154,6 +154,10 @@ In this example:
 - `targetPort` specifies the port number on the pods to which traffic should be forwarded.
 - `type` defines the type of Service. `NodePort` exposes a service externally to the cluster by means of the target nodes IP address and the NodePort.
 
+- Instance AWS rule of inbound
+
+  ![Inbound rules](https://github.com/user-attachments/assets/cb297298-a41a-4b98-8b61-eff145e3f188)
+
 
 ## --- KUBERNETES Install Steps ---
 ```markdown
