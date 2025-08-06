@@ -1,8 +1,5 @@
 # DAY-12 | Azure Pipelines
 
-#### Click Below to watch the video Tutorial
-[![Watch the video](https://img.youtube.com/vi/coWZWmlfzKM/0.jpg)](https://www.youtube.com/watch?v=coWZWmlfzKM)
-
 ## Azure Pipelines with Classic Editor
 
 Azure Pipelines is a powerful continuous integration and delivery (CI/CD) platform provided by Microsoft Azure. The Classic Editor in Azure Pipelines allows you to define your build and release pipelines using a graphical interface. This guide will walk you through the steps to set up and configure Azure Pipelines using the Classic Editor.
