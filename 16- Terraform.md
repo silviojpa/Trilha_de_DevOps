@@ -23,29 +23,6 @@ https://github.com/jaiswaladi246/Terraform-scripts
 Desvendando o Terraform: Do Conceito à Prática
 Bem-vindo ao guia completo sobre Terraform! Este material foi criado para fornecer uma introdução clara e um exemplo prático de como utilizar essa poderosa ferramenta de Infraestrutura como Código (IaC).
 
-Seções
-O que é o Terraform? (A Didática)
-
-Por que usar Terraform?
-
-Como o Terraform Funciona? (Os 3 Passos Mágicos)
-
-Exemplo Prático: Criando um Bucket S3 na AWS
-
-Estrutura dos Arquivos
-
-O Arquivo main.tf (O Cérebro)
-
-O Arquivo variables.tf (As Perguntas)
-
-O Arquivo terraform.tfvars (As Respostas Secretas)
-
-O Arquivo .gitignore
-
-Colocando a Mão na Massa: Passo a Passo
-
-Conclusão
-
 O que é o Terraform? (A Didática)
 Imagine que você precisa construir uma casa. Você pode ir lá e colocar tijolo por tijolo, manualmente. Isso funciona para uma casa pequena, mas e se você precisasse construir um bairro inteiro, com 100 casas idênticas? Seria um trabalho repetitivo, demorado e muito propenso a erros.
 
