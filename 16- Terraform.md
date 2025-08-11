@@ -23,7 +23,7 @@ https://github.com/jaiswaladi246/Terraform-scripts
 Desvendando o Terraform: Do Conceito à Prática
 Bem-vindo ao guia completo sobre Terraform! Este material foi criado para fornecer uma introdução clara e um exemplo prático de como utilizar essa poderosa ferramenta de Infraestrutura como Código (IaC).
 
-O que é o Terraform? (A Didática)
+# O que é o Terraform? (A Didática)
 Imagine que você precisa construir uma casa. Você pode ir lá e colocar tijolo por tijolo, manualmente. Isso funciona para uma casa pequena, mas e se você precisasse construir um bairro inteiro, com 100 casas idênticas? Seria um trabalho repetitivo, demorado e muito propenso a erros.
 
 Agora, e se você pudesse escrever uma planta detalhada (um projeto) que descreve exatamente como a casa deve ser: o número de quartos, a cor das paredes, o tipo de telha, etc. E se uma equipe de robôs pudesse ler essa planta e construir a casa (ou as 100 casas) de forma automática e perfeita?
@@ -34,14 +34,14 @@ Com o Terraform, você escreve arquivos de configuração simples para "descreve
 
 Em resumo: Terraform é uma ferramenta de Infraestrutura como Código (IaC) que permite que você defina e provisione sua infraestrutura de TI de forma segura e eficiente usando uma linguagem de configuração declarativa.
 
-Por que usar Terraform?
-Automação: Construa e gerencie sua infraestrutura de forma automática, reduzindo trabalho manual.
+# Por que usar Terraform?
+- Automação: Construa e gerencie sua infraestrutura de forma automática, reduzindo trabalho manual.
 
-Repetibilidade: Garanta que sua infraestrutura seja criada da mesma forma todas as vezes, evitando erros.
+- Repetibilidade: Garanta que sua infraestrutura seja criada da mesma forma todas as vezes, evitando erros.
 
-Versionamento: Trate sua infraestrutura como código. Você pode versioná-la com Git, revisar mudanças e colaborar em equipe.
+- Versionamento: Trate sua infraestrutura como código. Você pode versioná-la com Git, revisar mudanças e colaborar em equipe.
 
-Multi-Cloud: Use uma única ferramenta para gerenciar serviços de diversos provedores de nuvem (AWS, Azure, Google Cloud, etc.).
+- Multi-Cloud: Use uma única ferramenta para gerenciar serviços de diversos provedores de nuvem (AWS, Azure, Google Cloud, etc.).
 
 Como o Terraform Funciona? (Os 3 Passos Mágicos)
 O fluxo de trabalho do Terraform é baseado em três comandos principais:
@@ -57,12 +57,13 @@ Vamos criar um bucket de armazenamento S3 na Amazon Web Services. Um bucket é c
 
 Estrutura dos Arquivos
 Para este projeto, vamos usar a seguinte estrutura de arquivos:
-
+````
 .
 ├── main.tf
 ├── variables.tf
 ├── terraform.tfvars
 └── .gitignore
+````
 O Arquivo main.tf (O Cérebro)
 Este é o arquivo principal onde descrevemos o que queremos criar.
 
