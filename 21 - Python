@@ -2,14 +2,14 @@
 
 Essenciais para ''manipulação, análise de dados'' e Machine Learning.
 
-| Módulo/Biblioteca | Descrição |
-| :--- | :--- |
-| **Pandas** | A biblioteca mais importante para ''manipulação de dados''. Oferece estruturas de dados rápidas e flexíveis (como ''DataFrame'' e ''Series'') para leitura, limpeza, transformação e análise de dados tabulares. |
-| **NumPy** | Fundamental para ''computação numérica''. Fornece o objeto ''array'' multidimensional e funções otimizadas para realizar operações matemáticas em grandes arrays de forma eficiente. |
-| **Matplotlib** | Uma biblioteca de ''plotagem 2D'' que gera ''visualizações estáticas'' e interativas. É a base para a maioria dos gráficos em Python. |
-| **Seaborn** | Construído sobre o Matplotlib, é focado em estatísticas e oferece uma interface de alto nível para criar ''gráficos estatísticos'' atraentes de forma mais simples e rápida. |
-| **Scikit-learn** | A biblioteca ''padrão para Machine Learning''. Contém implementações de algoritmos de classificação, regressão, clustering e pré-processamento de dados para tarefas de ''ML''. |
-| **TensorFlow / PyTorch** | Bibliotecas de código aberto usadas para ''Deep Learning'' (Aprendizado Profundo). São a base para a criação de ''redes neurais'' complexas. |
+Módulo/Biblioteca | Descrição 
+
+**Pandas** | A biblioteca mais importante para ''manipulação de dados''. Oferece estruturas de dados rápidas e flexíveis (como ''DataFrame'' e ''Series'') para leitura, limpeza, transformação e análise de dados tabulares. |
+**NumPy** | Fundamental para ''computação numérica''. Fornece o objeto ''array'' multidimensional e funções otimizadas para realizar operações matemáticas em grandes arrays de forma eficiente. |
+**Matplotlib** | Uma biblioteca de ''plotagem 2D'' que gera ''visualizações estáticas'' e interativas. É a base para a maioria dos gráficos em Python. |
+**Seaborn** | Construído sobre o Matplotlib, é focado em estatísticas e oferece uma interface de alto nível para criar ''gráficos estatísticos'' atraentes de forma mais simples e rápida. |
+**Scikit-learn** | A biblioteca ''padrão para Machine Learning''. Contém implementações de algoritmos de classificação, regressão, clustering e pré-processamento de dados para tarefas de ''ML''. |
+**TensorFlow / PyTorch** | Bibliotecas de código aberto usadas para ''Deep Learning'' (Aprendizado Profundo). São a base para a criação de ''redes neurais'' complexas. |
 
 ---
 
