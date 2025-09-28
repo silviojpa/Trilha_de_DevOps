@@ -1,9 +1,3 @@
-# Módulos de Python Mais Utilizados em Projetos Reais no Mercado de Trabalho
-
-Em projetos reais, o Python se destaca pela sua vasta coleção de ''bibliotecas e módulos''. A seguir, estão os mais utilizados no mercado de trabalho em diferentes áreas.
-
----
-
 ## Módulos para Ciência de Dados e Análise (Data Science)
 
 Essenciais para ''manipulação, análise de dados'' e Machine Learning.
@@ -42,7 +36,6 @@ Usados em quase todo projeto para lidar com ''tarefas de rotina, arquivos, tempo
 | **`datetime`** (Biblioteca Padrão) | Módulo nativo usado para manipular ''datas, horas e fusos horários''. Essencial para logs e dados temporais. |
 | **`json`** (Biblioteca Padrão) | Módulo nativo para trabalhar com dados no formato ''JSON'', amplamente utilizado para transferência de dados em APIs e ''arquivos de configuração''. |
 | **`logging`** (Biblioteca Padrão) | Módulo nativo para ''registrar eventos (logs)'' de forma padronizada. Essencial para depuração, ''monitoramento de produção'' e rastreamento de erros. |
-| **`re`** (Biblioteca Padrão) | Módulo nativo para trabalhar com ''Expressões Regulares (Regex)''. Usado para buscas complexas e ''manipulação de padrões'' em textos e strings. |
 | **Pytest** | A ferramenta de ''testes de terceiros'' mais popular, conhecida por sua ''sintaxe simples'' e facilidade de uso para garantir a ''qualidade do código''. |
 
 ---
